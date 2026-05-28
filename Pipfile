@@ -1,0 +1,33 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.11"
+
+[packages]
+# Task queue / broker
+celery = "*"
+redis = "*"
+
+# LangChain / LLM tooling (as listed in requirements.txt)
+langchain-core = "*"
+langchain-openai = "==0.0.5"
+langgraph = "*"
+langchain = "==0.0.352"
+
+# LLM providers / API clients
+pinecone-client = "*"
+
+# Utilities
+requests = "*"
+python-dotenv = "*"
+
+[dev-packages]
+pytest = "*"
+black = "*"
+
+[scripts]
+# Example: run Celery worker
+start-worker = "celery -A tasks worker --loglevel=info"
